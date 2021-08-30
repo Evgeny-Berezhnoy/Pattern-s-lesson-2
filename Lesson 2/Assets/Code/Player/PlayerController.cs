@@ -17,6 +17,5 @@ public class PlayerController : IMove
            var speed = deltaTime * Speed;
            Vector3 move = new Vector3(horizontal,0, vertical);
            _rigidbody2D.AddForce( move * speed);
-           Debug.Log($"{speed}");
         }
     }

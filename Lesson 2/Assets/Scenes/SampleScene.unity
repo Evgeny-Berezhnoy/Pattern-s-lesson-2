@@ -247,6 +247,7 @@ GameObject:
   - component: {fileID: 1204530284}
   - component: {fileID: 1204530282}
   - component: {fileID: 1204530283}
+  - component: {fileID: 1204530287}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -270,9 +271,6 @@ MonoBehaviour:
   _acceleration: 1
   _hp: 100
   _playerRigitBody: {fileID: 1204530283}
-  _bullet: {fileID: 7948458825874149949, guid: 65ee5b4a801d6d44eb112962bd3246e2, type: 3}
-  _barrel: {fileID: 1204530286}
-  _force: 1000
 --- !u!50 &1204530283
 Rigidbody2D:
   serializedVersion: 4
@@ -282,10 +280,10 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204530281}
   m_BodyType: 0
-  m_Simulated: 1
+  m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -356,3 +354,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -233.47598}
+--- !u!114 &1204530287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204530281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916299ccad14485f8f0d6c9d16d378a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _barrel: {fileID: 633134644}
+  _force: 6
+  _rigidbody2D: {fileID: -1676998598935161537, guid: ae4d463454dcd3f4f8546cef1366ff03,
+    type: 3}

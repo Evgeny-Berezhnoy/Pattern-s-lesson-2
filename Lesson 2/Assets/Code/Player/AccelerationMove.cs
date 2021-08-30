@@ -7,7 +7,6 @@ internal sealed class AccelerationMove : Player, IMove
         {
             _acceleration = acceleration;
         }
-
         public void AddAcceleration()
         { 
             Speed += _acceleration;
