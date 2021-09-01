@@ -25,13 +25,14 @@ using UnityEngine;
             var moveTransform = new AccelerationMove(transform, _speed, _hp,_acceleration);
             var rotation = new RotationShip(transform);
             _ship = new Ship(moveTransform, rotation);
+            Enemy.CreateEnemyAsteroid(new Health(100, 50));
+            Enemy.CreateBigAsteroid(new Health(150, 79));
         }
         private void Update()
         {
             var direction = Input.mousePosition - _camera.WorldToScreenPoint(transform.position);
             _ship.Rotation(direction);
-            _playerController.Move(Input.GetAxis(NAME_NUMBERS.HORIZONT),
-                Input.GetAxis(NAME_NUMBERS.VERTICAL), Time.deltaTime);
+            
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
                 _ship.AddAAcceleration();
@@ -42,6 +43,13 @@ using UnityEngine;
                 _ship.RemoveAcceleration();
             }
         }
+
+        private void FixedUpdate()
+        {
+            _playerController.Move(Input.GetAxis(NAME_NUMBERS.HORIZONT), 
+                Input.GetAxis(NAME_NUMBERS.VERTICAL), Time.deltaTime);
+        }
+
         private void OnCollisionEnter2D(Collision2D other)
         {
             if(_hp<=0) Destroy(gameObject);

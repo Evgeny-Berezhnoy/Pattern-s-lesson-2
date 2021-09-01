@@ -7,15 +7,17 @@ public class PlayerController : IMove
 
         public PlayerController(Player player, Rigidbody2D rigidbody2D)
         {
-            _transform = player.TransformPlayer;
+            _transform = player._transformPlayer;
             _rigidbody2D = rigidbody2D;
-            Speed = player.Speed;
+            Speed = player._speed;
         }
         public float Speed { get; }
         public void Move(float horizontal, float vertical, float deltaTime)
         {
            var speed = deltaTime * Speed;
-           Vector3 move = new Vector3(horizontal,0, vertical);
-           _rigidbody2D.AddForce( move * speed);
+           Vector2 move = new Vector2(horizontal,vertical);
+           move = Vector3.ClampMagnitude(move, speed);
+           move.y = _rigidbody2D.velocity.y;
+           _rigidbody2D.velocity = move;
         }
     }

@@ -7,14 +7,14 @@ public class BulletController
     private Rigidbody2D _rigidbody2D;
     public BulletController(BulletData bulletData)
     {
-        _rigidbody2D = bulletData.Rigit;
-        _barrel = bulletData.Barrel;
-        _force = bulletData.Force;
+        _rigidbody2D = bulletData._rigidbody2D;
+        _barrel = bulletData._barrel;
+        _force = bulletData._force;
         
     }
         public void CreateBullet(Rigidbody2D rigidbody2D, Transform transform, float force)
         {
             var bul = Object.Instantiate(rigidbody2D, transform.position, transform.rotation);
-            bul.AddForce(Vector2.up * force);
+            bul.AddForce(Vector3.up * force, ForceMode2D.Impulse);
         }
     }

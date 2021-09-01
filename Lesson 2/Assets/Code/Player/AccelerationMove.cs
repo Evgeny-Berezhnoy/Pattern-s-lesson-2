@@ -9,13 +9,15 @@ internal sealed class AccelerationMove : Player, IMove
         }
         public void AddAcceleration()
         { 
-            Speed += _acceleration;
+            _speed += _acceleration;
         }
 
         public void RemoveAcceleration()
         {
-            Speed -= _acceleration;
+            _speed -= _acceleration;
         }
+
+        public float Speed { get; }
 
         public void Move(float horizontal, float vertical, float deltaTime)
         {

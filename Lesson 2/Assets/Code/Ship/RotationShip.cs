@@ -3,7 +3,6 @@
 public class RotationShip : IRotation
     {
         private readonly Transform _transform;
-
         public RotationShip(Transform transform)
         {
             _transform = transform;
