@@ -5,17 +5,20 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerView : MonoBehaviour
     {
-        [SerializeField]private float _speed;
-        [SerializeField]private float _acceleration;
-        [SerializeField]private float _hp;
+        [SerializeField] private float _speed;
+        [SerializeField] private float _acceleration;
+        [SerializeField] private float _hp;
         [SerializeField] private Rigidbody2D _playerRigitBody;
+        
         private Camera _camera;
         private IRotation _rotation;
         private IMove _moveTransform;
         private Ship _ship;
         private Vector2 _vector2;
         private PlayerController _playerController;
-        private void Awake()
+        private EnemyMove _enemyMove;
+        
+        internal void Awake()
         {
             _playerController = new PlayerController(new Player(transform, _speed, _hp), _playerRigitBody);
         }

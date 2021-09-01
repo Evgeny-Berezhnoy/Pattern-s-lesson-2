@@ -94,4 +94,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e711d80d091420e8c4ca702c81b83ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 0}
+  _transformTarget: {fileID: 8229184902162360783}
+  _enemyTransform: {fileID: 0}
+  _speed: 5
+  _maxDistance: 5
+  _rigidbody2D: {fileID: 0}

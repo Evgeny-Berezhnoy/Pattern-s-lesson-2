@@ -3,6 +3,7 @@
 public class RotationShip : IRotation
     {
         private readonly Transform _transform;
+        private float _angleOffset = 90;
         public RotationShip(Transform transform)
         {
             _transform = transform;
