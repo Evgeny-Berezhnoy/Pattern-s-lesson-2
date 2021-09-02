@@ -204,6 +204,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &804290557 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3982905753880889181, guid: 8fb03a5ebd0061a4eb94480ca0104752,
+    type: 3}
+  m_PrefabInstance: {fileID: 3982905753004237055}
+  m_PrefabAsset: {fileID: 0}
+--- !u!70 &804290564
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804290557}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.99999994, y: 1.9999999}
+  m_Direction: 0
 --- !u!1001 &3982905753004237055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -219,17 +241,17 @@ PrefabInstance:
     - target: {fileID: 3982905753880889176, guid: 8fb03a5ebd0061a4eb94480ca0104752,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.81
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3982905753880889176, guid: 8fb03a5ebd0061a4eb94480ca0104752,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.3
+      value: -4.08
       objectReference: {fileID: 0}
     - target: {fileID: 3982905753880889176, guid: 8fb03a5ebd0061a4eb94480ca0104752,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.8920937
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3982905753880889176, guid: 8fb03a5ebd0061a4eb94480ca0104752,
         type: 3}
@@ -265,6 +287,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982905753880889180, guid: 8fb03a5ebd0061a4eb94480ca0104752,
+        type: 3}
+      propertyPath: _damageBulletl
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3982905753880889181, guid: 8fb03a5ebd0061a4eb94480ca0104752,
         type: 3}

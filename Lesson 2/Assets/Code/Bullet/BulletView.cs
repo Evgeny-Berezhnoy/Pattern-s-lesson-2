@@ -1,4 +1,5 @@
 ﻿
+using System;
 using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class BulletView : MonoBehaviour
@@ -6,16 +7,16 @@ public class BulletView : MonoBehaviour
         [SerializeField]private Transform _barrel;
         [SerializeField]private float _force;
         [SerializeField]private Rigidbody2D _rigidbody2D;
-        private BulletController bulletController;
+        private BulletController _bulletController;
         private void Start()
         {
-            bulletController = new BulletController(new BulletData(_barrel,_force,_rigidbody2D));
+            _bulletController = new BulletController(new BulletData(_barrel,_force,_rigidbody2D));
         }
         private void Update()
         {
             if (Input.GetButtonDown("Fire1"))
             {
-                bulletController.CreateBullet(_rigidbody2D, _barrel.transform, _force);
+                _bulletController.CreateBullet(_rigidbody2D, _barrel.transform, _force);
             }
         }
     }

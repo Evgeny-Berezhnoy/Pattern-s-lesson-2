@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerView : MonoBehaviour
     {
+        [SerializeField] private float _damageBulletl;
         [SerializeField] private float _speed;
         [SerializeField] private float _acceleration;
         [SerializeField] private float _hp;
@@ -14,10 +15,9 @@ using UnityEngine;
         private IRotation _rotation;
         private IMove _moveTransform;
         private Ship _ship;
-        private Vector2 _vector2;
         private PlayerController _playerController;
-        private EnemyMove _enemyMove;
-        
+        private Asteroid _asteroid;
+        private BigAsteroid _bigaster;
         internal void Awake()
         {
             _playerController = new PlayerController(new Player(transform, _speed, _hp), _playerRigitBody);
@@ -28,8 +28,9 @@ using UnityEngine;
             var moveTransform = new AccelerationMove(transform, _speed, _hp,_acceleration);
             var rotation = new RotationShip(transform);
             _ship = new Ship(moveTransform, rotation);
-            Enemy.CreateEnemyAsteroid(new Health(100, 50));
-            Enemy.CreateBigAsteroid(new Health(150, 79));
+            _asteroid = Enemy.CreateEnemyAsteroid(new Health(100, 50));
+            _bigaster = Enemy.CreateBigAsteroid(new Health(150, 79));
+            
         }
         private void Update()
         {
@@ -46,19 +47,27 @@ using UnityEngine;
                 _ship.RemoveAcceleration();
             }
         }
-
         private void FixedUpdate()
         {
             _playerController.Move(Input.GetAxis(NAME_NUMBERS.HORIZONT), 
                 Input.GetAxis(NAME_NUMBERS.VERTICAL), Time.deltaTime);
         }
-
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if(_hp<=0) Destroy(gameObject);
-            else
+            if (other.gameObject.GetComponent<Enemy>())
             {
-                _hp--;
+                if(_bigaster.Health.Current<=0) 
+                    Destroy(other.gameObject);
+                else
+                { 
+                    Damage(_bigaster, _damageBulletl);
+                    Debug.Log($"{_bigaster.Health.Current}");
+                }
             }
+        }
+        
+        private void Damage(Enemy hp,float damageBulls)
+        {
+            hp.Health.Current -= damageBulls;
         }
     }

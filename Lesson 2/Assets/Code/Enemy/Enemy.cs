@@ -4,7 +4,7 @@ using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour
     {
-        public Health Health { get; private set; }
+        public Health Health { get;  set; }
         public static Asteroid CreateEnemyAsteroid(Health hp)
         {
             var enemy = Instantiate(Resources.Load<Asteroid>("Asteroid"));

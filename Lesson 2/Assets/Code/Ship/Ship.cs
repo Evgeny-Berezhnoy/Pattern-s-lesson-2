@@ -20,7 +20,7 @@ internal sealed class Ship : IMove,IRotation
         }
         public void Move(float horizontal, float vertical, float deltaTime)
         {
-            /// загллшка
+            /// заглушка
         }
         public void AddAAcceleration()
         {
