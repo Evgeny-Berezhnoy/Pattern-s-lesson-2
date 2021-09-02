@@ -1,28 +1,39 @@
 ﻿using UnityEngine;
+using  System.Collections;
+
 public class EnemyMove : Enemy
+
 {
    [SerializeField] private float _speed;
-    
-   private Rigidbody2D _rigidbody2DAsteroid;
-    private Vector3 EnemyFindTransform;
-    private Vector3 PlayerFindTransform;
+   [SerializeField] private GameObject obj;
+   //private Asteroid _asteroid;
+   private PlayerView _playerView;
 
-    private void Start()
-    { 
-       EnemyFindTransform = FindObjectOfType<BigAsteroid>().transform.position;
-       PlayerFindTransform = FindObjectOfType<PlayerView>().transform.position;
-       _rigidbody2DAsteroid = FindObjectOfType<Rigidbody2D>();
-    }
+   private void Start()
+   {
+      //_asteroid = FindObjectOfType<Asteroid>(); 
+      _playerView = FindObjectOfType<PlayerView>();
+   }
 
-    public void EnemyAttack(Vector2 player, Vector2 enemy, Rigidbody2D rigidbody2D,float speed)
+   /* public void EnemyAttack(Transform Asteroid,Transform BigAsteroid, Transform player, Rigidbody2D rigidbody2D,float speed)
         { 
-           var vector = enemy - player;
-          rigidbody2D.AddForce(vector*speed);
-        }
+           var vector = player.transform.position - Asteroid.transform.position ;
+           var vector1 = player.transform.position - BigAsteroid.transform.position ;
+           transform.Translate(vector * (speed* Time.deltaTime));
+           //transform.Translate(vector1 * (speed* Time.deltaTime));
+          //rigidbody2D.AddForce(a*speed);
+          Debug.Log($"enemy : {Asteroid.transform.position}");
+          Debug.Log($"player:{player.transform.position}");
+          Debug.Log($"enemy - player:{Asteroid.transform.position - player.transform.position}");
+        }*/
 
-
-        private void FixedUpdate()
-        {
-           EnemyAttack(EnemyFindTransform, PlayerFindTransform, _rigidbody2DAsteroid, _speed);
-        }
-    }
+   public void EnemyAttack(Transform asteroid,Transform player, float speed)
+   {
+      var vector = player.transform.position - asteroid.transform.position;
+      transform.Translate(vector * (speed * Time.deltaTime));
+   }
+   private void FixedUpdate()
+   {
+      EnemyAttack(obj.transform ,_playerView.transform, _speed);
+   }
+}

@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 969904161304041633}
   - component: {fileID: 902199544028026708}
   - component: {fileID: -7460655690798238905}
-  - component: {fileID: 6485726556415857494}
-  - component: {fileID: 1630012751060744626}
+  - component: {fileID: 5932955642786086676}
+  - component: {fileID: -8523494709845875193}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1416072628507055035}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1492445, y: 1.1492445, z: 1.1492445}
+  m_LocalScale: {x: 0.415638, y: 0.415638, z: 0.415638}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -96,29 +96,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd573f2e0c11439bbe02c899397cbedf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2
---- !u!50 &6485726556415857494
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1416072628507055035}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &1630012751060744626
+  _speed: 0.5
+  obj: {fileID: 1416072628507055035}
+--- !u!114 &5932955642786086676
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,3 +110,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d338309136ab40928fb0c6bccbe57bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!70 &-8523494709845875193
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416072628507055035}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1.86, y: 1.72}
+  m_Direction: 0
