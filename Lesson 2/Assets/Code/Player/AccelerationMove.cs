@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-
 internal sealed class AccelerationMove : Player, IMove
     {
         private readonly float _acceleration;
@@ -9,16 +8,14 @@ internal sealed class AccelerationMove : Player, IMove
         }
         public void AddAcceleration()
         { 
-            _speed += _acceleration;
+            Speed += _acceleration;
         }
 
         public void RemoveAcceleration()
         {
-            _speed -= _acceleration;
+            Speed -= _acceleration;
         }
-
-        public float Speed { get; }
-
+        public float Speed { get; set; }
         public void Move(float horizontal, float vertical, float deltaTime)
         {
             

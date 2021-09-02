@@ -47,7 +47,6 @@ using UnityEngine;
             {
                 _ship.RemoveAcceleration();
             }
-            
         }
         private void FixedUpdate()
         {

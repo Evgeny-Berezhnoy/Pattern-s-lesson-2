@@ -1,13 +1,9 @@
 ﻿using UnityEngine;
-using  System.Collections;
-
 public class EnemyMove : Enemy
-
 {
    [SerializeField] private float _speed;
    [SerializeField] private GameObject obj;
    private PlayerView _playerView;
-
    private void Start()
    {
       _playerView = FindObjectOfType<PlayerView>();
