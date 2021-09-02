@@ -1,19 +1,28 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 public class EnemyMove : Enemy
 {
-    [SerializeField] private Transform _playerTransform;
-    [SerializeField] private Rigidbody2D _rigidbody2DAsteroid;
-    [SerializeField] private float _speed;
+   [SerializeField] private float _speed;
+    
+   private Rigidbody2D _rigidbody2DAsteroid;
+    private Vector3 EnemyFindTransform;
+    private Vector3 PlayerFindTransform;
 
-        public void EnemyAttack(Enemy transform, Transform player, Rigidbody2D rigidbody2D, float speed)
-        {
-           // rigidbody2D.velocity = (player.position - Enemy.).normalized * speed;
+    private void Start()
+    { 
+       EnemyFindTransform = FindObjectOfType<BigAsteroid>().transform.position;
+       PlayerFindTransform = FindObjectOfType<PlayerView>().transform.position;
+       _rigidbody2DAsteroid = FindObjectOfType<Rigidbody2D>();
+    }
+
+    public void EnemyAttack(Vector2 player, Vector2 enemy, Rigidbody2D rigidbody2D,float speed)
+        { 
+           var vector = enemy - player;
+          rigidbody2D.AddForce(vector*speed);
         }
 
 
-        private void Update()
+        private void FixedUpdate()
         {
-           // EnemyAttack(_asteroidTransform, _playerTransform, _rigidbody2DAsteroid, _speed);
+           EnemyAttack(EnemyFindTransform, PlayerFindTransform, _rigidbody2DAsteroid, _speed);
         }
     }
