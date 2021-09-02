@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerView : MonoBehaviour
     {
-        [SerializeField] private float _damageBulletl;
+        
         [SerializeField] private float _speed;
         [SerializeField] private float _acceleration;
         [SerializeField] private float _hp;
@@ -17,7 +17,7 @@ using UnityEngine;
         private Ship _ship;
         private PlayerController _playerController;
         private Asteroid _asteroid;
-        private BigAsteroid _bigaster;
+        internal BigAsteroid _bigaster;
         internal void Awake()
         {
             _playerController = new PlayerController(new Player(transform, _speed, _hp), _playerRigitBody);
@@ -46,28 +46,12 @@ using UnityEngine;
             {
                 _ship.RemoveAcceleration();
             }
+            
         }
         private void FixedUpdate()
         {
             _playerController.Move(Input.GetAxis(NAME_NUMBERS.HORIZONT), 
                 Input.GetAxis(NAME_NUMBERS.VERTICAL), Time.deltaTime);
         }
-        private void OnCollisionEnter2D(Collision2D other)
-        {
-            if (other.gameObject.GetComponent<Enemy>())
-            {
-                if(_bigaster.Health.Current<=0) 
-                    Destroy(other.gameObject);
-                else
-                { 
-                    Damage(_bigaster, _damageBulletl);
-                    Debug.Log($"{_bigaster.Health.Current}");
-                }
-            }
-        }
-        
-        private void Damage(Enemy hp,float damageBulls)
-        {
-            hp.Health.Current -= damageBulls;
-        }
+      
     }

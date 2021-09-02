@@ -121,6 +121,33 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &128114855 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3982905753199787912, guid: 8fb03a5ebd0061a4eb94480ca0104752,
+    type: 3}
+  m_PrefabInstance: {fileID: 3982905753004237055}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &128114858
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128114855}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,6 +237,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3982905753004237055}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &804290560 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 3982905753880889179, guid: 8fb03a5ebd0061a4eb94480ca0104752,
+    type: 3}
+  m_PrefabInstance: {fileID: 3982905753004237055}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &804290563 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3982905753880889176, guid: 8fb03a5ebd0061a4eb94480ca0104752,
+    type: 3}
+  m_PrefabInstance: {fileID: 3982905753004237055}
+  m_PrefabAsset: {fileID: 0}
 --- !u!70 &804290564
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -233,6 +272,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3982905753199787911, guid: 8fb03a5ebd0061a4eb94480ca0104752,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982905753880889175, guid: 8fb03a5ebd0061a4eb94480ca0104752,
+        type: 3}
+      propertyPath: _force
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982905753880889175, guid: 8fb03a5ebd0061a4eb94480ca0104752,
+        type: 3}
+      propertyPath: _barrel
+      value: 
+      objectReference: {fileID: 804290563}
+    - target: {fileID: 3982905753880889175, guid: 8fb03a5ebd0061a4eb94480ca0104752,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982905753880889175, guid: 8fb03a5ebd0061a4eb94480ca0104752,
+        type: 3}
+      propertyPath: _damageBulletl
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 3982905753880889176, guid: 8fb03a5ebd0061a4eb94480ca0104752,
         type: 3}
       propertyPath: m_RootOrder
@@ -290,13 +354,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3982905753880889180, guid: 8fb03a5ebd0061a4eb94480ca0104752,
         type: 3}
-      propertyPath: _damageBulletl
-      value: 25
+      propertyPath: _acceleration
+      value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3982905753880889180, guid: 8fb03a5ebd0061a4eb94480ca0104752,
+        type: 3}
+      propertyPath: _damageBulletl
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982905753880889180, guid: 8fb03a5ebd0061a4eb94480ca0104752,
+        type: 3}
+      propertyPath: _playerRigitBody
+      value: 
+      objectReference: {fileID: 804290560}
     - target: {fileID: 3982905753880889181, guid: 8fb03a5ebd0061a4eb94480ca0104752,
         type: 3}
       propertyPath: m_Name
-      value: Capsule (1)
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fb03a5ebd0061a4eb94480ca0104752, type: 3}
