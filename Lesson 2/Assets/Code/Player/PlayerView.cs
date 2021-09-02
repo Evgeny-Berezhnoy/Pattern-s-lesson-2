@@ -8,7 +8,7 @@ using UnityEngine;
         
         [SerializeField] private float _speed;
         [SerializeField] private float _acceleration;
-        [SerializeField] internal float _hp;
+        [SerializeField] internal float Hp;
         [SerializeField] private Rigidbody2D _playerRigitBody;
         
         private Camera _camera;
@@ -25,8 +25,8 @@ using UnityEngine;
         private void Start()
         {
             _camera = Camera.main;
-            _playerController = new PlayerController(new Player(transform, _speed, _hp), _playerRigitBody);
-            var moveTransform = new AccelerationMove(transform, _speed, _hp,_acceleration);
+            _playerController = new PlayerController(new Player(transform, _speed, Hp), _playerRigitBody);
+            var moveTransform = new AccelerationMove(transform, _speed, Hp,_acceleration);
             var rotation = new RotationShip(transform);
             _ship = new Ship(moveTransform, rotation);
             _asteroid = Enemy.CreateEnemyAsteroid(new Health(100, 50));

@@ -355,7 +355,7 @@ PrefabInstance:
     - target: {fileID: 3982905753880889180, guid: 8fb03a5ebd0061a4eb94480ca0104752,
         type: 3}
       propertyPath: _acceleration
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 3982905753880889180, guid: 8fb03a5ebd0061a4eb94480ca0104752,
         type: 3}

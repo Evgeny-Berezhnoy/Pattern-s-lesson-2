@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour
@@ -22,20 +21,19 @@ public class Enemy : MonoBehaviour
         }
         public void DamagePlayer(PlayerView hp, float damage)
         {
-            hp._hp -= damage;
+            hp.Hp -= damage;
         }
 
         private void OnCollisionEnter2D(Collision2D other)
         {
             if (other.gameObject.GetComponent<PlayerView>())
             {
-                if (other.gameObject.GetComponent<PlayerView>()._hp <= 0) Destroy(other.gameObject);
+                if (other.gameObject.GetComponent<PlayerView>().Hp <= 0) Destroy(other.gameObject);
                 else
                 {
                     DamagePlayer(other.gameObject.GetComponent<PlayerView>(), _damageEnemy);
-                    Debug.Log($" Player hp : {other.gameObject.GetComponent<PlayerView>()._hp}");
+                    Debug.Log($" Player hp : {other.gameObject.GetComponent<PlayerView>().Hp}");
                 }
             }
-
         }
 }
