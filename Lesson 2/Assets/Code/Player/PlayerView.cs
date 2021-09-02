@@ -8,7 +8,7 @@ using UnityEngine;
         
         [SerializeField] private float _speed;
         [SerializeField] private float _acceleration;
-        [SerializeField] private float _hp;
+        [SerializeField] internal float _hp;
         [SerializeField] private Rigidbody2D _playerRigitBody;
         
         private Camera _camera;
@@ -20,11 +20,12 @@ using UnityEngine;
         internal BigAsteroid _bigaster;
         internal void Awake()
         {
-            _playerController = new PlayerController(new Player(transform, _speed, _hp), _playerRigitBody);
+            
         }
         private void Start()
         {
             _camera = Camera.main;
+            _playerController = new PlayerController(new Player(transform, _speed, _hp), _playerRigitBody);
             var moveTransform = new AccelerationMove(transform, _speed, _hp,_acceleration);
             var rotation = new RotationShip(transform);
             _ship = new Ship(moveTransform, rotation);

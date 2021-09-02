@@ -3,7 +3,8 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour
-    {
+{
+        [SerializeField] private float _damageEnemy;
         public Health Health { get;  set; }
         public static Asteroid CreateEnemyAsteroid(Health hp)
         {
@@ -19,4 +20,22 @@ public class Enemy : MonoBehaviour
             bigAsteroid.Health = hp;
             return bigAsteroid;
         }
-    }
+        public void DamagePlayer(PlayerView hp, float damage)
+        {
+            hp._hp -= damage;
+        }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.gameObject.GetComponent<PlayerView>())
+            {
+                if (other.gameObject.GetComponent<PlayerView>()._hp <= 0) Destroy(other.gameObject);
+                else
+                {
+                    DamagePlayer(other.gameObject.GetComponent<PlayerView>(), _damageEnemy);
+                    Debug.Log($" Player hp : {other.gameObject.GetComponent<PlayerView>()._hp}");
+                }
+            }
+
+        }
+}
