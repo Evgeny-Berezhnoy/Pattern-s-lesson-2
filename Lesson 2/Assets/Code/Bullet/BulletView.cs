@@ -1,6 +1,4 @@
-﻿
-using Code.Bullet;
-using UnityEngine;
+﻿using UnityEngine;
 public class BulletView : MonoBehaviour
     {
         [SerializeField] private float _damageBulletl;

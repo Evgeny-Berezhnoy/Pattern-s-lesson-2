@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 
 namespace Code.Bullet
@@ -11,6 +10,7 @@ namespace Code.Bullet
        public class Pool
         {
             public int size;
+            public string tag;
             public GameObject prefab;
             public Transform Transform;
         }
@@ -44,11 +44,26 @@ namespace Code.Bullet
         {
             var obj = _Queue.Dequeue();
             obj.SetActive(true);
-            obj.GetComponent<Rigidbody2D>().velocity = transform.up*5f;
+            obj.GetComponent<Rigidbody2D>().velocity = transform.up * 10f;
             obj.transform.localPosition = transform.position;
             obj.transform.localRotation = transform.rotation;
             return obj;
         }
+        public void ReturnToPoolBullet()
+        {
+            foreach (var pool in Pools)
+            {
+                var a = pool.prefab;
+                if (a.activeSelf)
+                {
+                    a.SetActive(false);
+                    a.transform.localPosition = Vector2.zero;
+                    a.transform.localRotation = Quaternion.identity;
+                    _Queue.Enqueue(a);
+                }
+            }
+        }
+
         
     }
 }
