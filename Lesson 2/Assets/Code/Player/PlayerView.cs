@@ -32,12 +32,12 @@
             var direction = Input.mousePosition - _camera.WorldToScreenPoint(transform.position);
             _ship.Rotation(direction);
             
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (Input.GetKey(KeyCode.LeftShift))
             {
                 _ship.AddAAcceleration();
             }
 
-            if (Input.GetKeyUp(KeyCode.LeftShift))
+            if (Input.GetKey(KeyCode.LeftShift))
             {
                 _ship.RemoveAcceleration();
             }
@@ -46,6 +46,7 @@
         {
             _playerController.Move(Input.GetAxis(NAME_MANAGER.HORIZONT), 
                 Input.GetAxis(NAME_MANAGER.VERTICAL), Time.deltaTime);
+            
         }
       
     }

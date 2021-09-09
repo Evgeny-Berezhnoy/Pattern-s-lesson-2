@@ -1,4 +1,5 @@
 ﻿
+using Code.Bullet;
 using UnityEngine;
 public class BulletView : MonoBehaviour
     {
@@ -16,7 +17,7 @@ public class BulletView : MonoBehaviour
         {
             if (Input.GetButtonDown(NAME_MANAGER.LeftButtonMouse))
             {
-                _bulletController.CreateBullet(_rigidbody2D, _barrel.transform, _force);
+               //_bulletController.CreateBullet(_rigidbody2D, _barrel.transform, _force);
             }
         }
         private void OnCollisionEnter2D(Collision2D other)
