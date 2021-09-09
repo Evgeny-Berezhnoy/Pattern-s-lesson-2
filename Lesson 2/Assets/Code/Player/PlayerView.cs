@@ -1,6 +1,4 @@
-﻿using System;
-using Code;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerView : MonoBehaviour
@@ -18,10 +16,6 @@ using UnityEngine;
         private PlayerController _playerController;
         private Asteroid _asteroid;
         internal BigAsteroid _bigaster;
-        internal void Awake()
-        {
-            
-        }
         private void Start()
         {
             _camera = Camera.main;
@@ -50,8 +44,8 @@ using UnityEngine;
         }
         private void FixedUpdate()
         {
-            _playerController.Move(Input.GetAxis(NAME_NUMBERS.HORIZONT), 
-                Input.GetAxis(NAME_NUMBERS.VERTICAL), Time.deltaTime);
+            _playerController.Move(Input.GetAxis(NAME_MANAGER.HORIZONT), 
+                Input.GetAxis(NAME_MANAGER.VERTICAL), Time.deltaTime);
         }
       
     }

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3982905753199787912}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1.008, z: 0}
   m_LocalScale: {x: 0.76087993, y: 0.76087993, z: 0.76087993}
   m_Children: []
   m_Father: {fileID: 3982905753880889176}
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 100
   _acceleration: 100
-  _hp: 100
+  Hp: 0
   _playerRigitBody: {fileID: 3982905753880889179}
 --- !u!114 &3982905753880889175
 MonoBehaviour:
@@ -162,6 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 916299ccad14485f8f0d6c9d16d378a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damageBulletl: 0
   _barrel: {fileID: 3982905753199787911}
   _force: 25
   _rigidbody2D: {fileID: 1683702662931925076, guid: cced2632f77057746a949cebb72c3070,

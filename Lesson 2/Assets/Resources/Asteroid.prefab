@@ -11,16 +11,16 @@ GameObject:
   - component: {fileID: 969904161304041633}
   - component: {fileID: 902199544028026708}
   - component: {fileID: -8523494709845875193}
-  - component: {fileID: 5932955642786086676}
   - component: {fileID: -5128815819366105550}
-  - component: {fileID: -2793845556975266201}
+  - component: {fileID: 3339612346031907948}
+  - component: {fileID: 3042007407074766215}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &969904161304041633
 Transform:
   m_ObjectHideFlags: 0
@@ -101,19 +101,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.86, y: 1.72}
   m_Direction: 0
---- !u!114 &5932955642786086676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1416072628507055035}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d338309136ab40928fb0c6bccbe57bef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damageEnemy: 0
 --- !u!114 &-5128815819366105550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,7 +116,7 @@ MonoBehaviour:
   _damageEnemy: 23
   _speed: 0.15
   obj: {fileID: 1416072628507055035}
---- !u!114 &-2793845556975266201
+--- !u!114 &3339612346031907948
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,7 +125,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1416072628507055035}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3e4cff28776420182785be771144ecf, type: 3}
+  m_Script: {fileID: 11500000, guid: e6d72e93f45644459c34c58067a4af4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageEnemy: 25
+--- !u!114 &3042007407074766215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416072628507055035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d338309136ab40928fb0c6bccbe57bef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damageEnemy: 20

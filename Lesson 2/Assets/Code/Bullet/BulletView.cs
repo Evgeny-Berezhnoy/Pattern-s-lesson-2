@@ -1,4 +1,4 @@
-﻿using Code;
+﻿
 using UnityEngine;
 public class BulletView : MonoBehaviour
     {
@@ -14,7 +14,7 @@ public class BulletView : MonoBehaviour
         }
         private void Update()
         {
-            if (Input.GetButtonDown(NAME_NUMBERS.LeftButtonMouse))
+            if (Input.GetButtonDown(NAME_MANAGER.LeftButtonMouse))
             {
                 _bulletController.CreateBullet(_rigidbody2D, _barrel.transform, _force);
             }
