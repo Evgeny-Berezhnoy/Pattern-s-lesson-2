@@ -13,14 +13,13 @@ GameObject:
   - component: {fileID: 8308304267701882664}
   - component: {fileID: 2328961870690591380}
   - component: {fileID: -5134150114010472961}
-  - component: {fileID: 1690850562748158255}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7645148914472380455
 Transform:
   m_ObjectHideFlags: 0
@@ -28,8 +27,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2373184521622677777}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.42967507, w: 0.9029836}
+  m_LocalPosition: {x: 1.1164821, y: -2.6252053, z: 0}
   m_LocalScale: {x: 0.15920424, y: 0.123484254, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -119,15 +118,3 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
---- !u!114 &1690850562748158255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2373184521622677777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea8fee53b82546cd880cf2ad6fe52ce4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

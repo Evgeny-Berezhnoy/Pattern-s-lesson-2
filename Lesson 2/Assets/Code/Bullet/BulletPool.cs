@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,64 +6,55 @@ namespace Code.Bullet
 {
     public class BulletPool : MonoBehaviour
     {
-        [Serializable]
-       public class Pool
-        {
-            public int size;
-            public string tag;
-            public GameObject prefab;
-            public Transform Transform;
-        }
-        public List<Pool> Pools;
-        public Queue<GameObject> _Queue;
+        public float size;
+        public GameObject prefab;
+        public Transform AIM;
+        private List<GameObject> _objectsPool;
 
         private void Start()
         {
-            _Queue = new Queue<GameObject>();
-            foreach (var pool in Pools)
-            {
-                for (int i = 0; i < pool.size; i++)
-                {
-                    var obj = Instantiate(pool.prefab);
-                    obj.SetActive(false);
-                    _Queue.Enqueue(obj);
-                }
-            }
+            _objectsPool = new List<GameObject>();
+            Init();
         }
-
         private void Update()
         {
             if (Input.GetMouseButtonDown(0))
             {
-                SpawnBullets();
-                Debug.Log("xxx");
+                CreateBullet();
+            }
+        }
+        public void Init()
+        {
+            for (int i = 0; i < size; i++)
+            {
+                var obj = Instantiate(prefab);
+                obj.SetActive(false);
+                obj.transform.SetParent(transform);
+                _objectsPool.Add(obj);
             }
         }
 
-        public GameObject SpawnBullets()
+        public void CreateBullet()
         {
-            var obj = _Queue.Dequeue();
-            obj.SetActive(true);
-            obj.GetComponent<Rigidbody2D>().velocity = transform.up * 10f;
-            obj.transform.localPosition = transform.position;
-            obj.transform.localRotation = transform.rotation;
-            return obj;
-        }
-        public void ReturnToPoolBullet()
-        {
-            foreach (var pool in Pools)
+            foreach (var bullet in _objectsPool)
             {
-                var a = pool.prefab;
-                if (a.activeSelf)
-                {
-                    a.SetActive(false);
-                    a.transform.localPosition = Vector2.zero;
-                    a.transform.localRotation = Quaternion.identity;
-                    _Queue.Enqueue(a);
+                if (!bullet.activeSelf)
+                {   
+                    bullet.transform.position = AIM.transform.position;
+                    bullet.transform.rotation = AIM.transform.rotation;
+                    bullet.SetActive(true);
+                    bullet.GetComponent<Rigidbody2D>().velocity = AIM.up * 10f;
+                    StartCoroutine(Return(2, bullet));
+                    return;
                 }
             }
         }
 
-        
+        private IEnumerator Return(float time, GameObject gO)
+        {
+            yield return new WaitForSeconds(time);
+            gO.SetActive(false);
+        }
     }
+    
 }

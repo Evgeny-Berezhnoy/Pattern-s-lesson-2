@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageEnemy: 25
-  _speed: 0.2
+  _speed: 0.001
   obj: {fileID: 1829189280640820382}
 --- !u!70 &-1950794861836541164
 CapsuleCollider2D:

@@ -8,14 +8,14 @@ public class EnemyMove : Enemy
    {
       _playerView = FindObjectOfType<PlayerView>();
    }
-   public void EnemyAttack(Transform asteroid,Transform player, float speed)
+   public void EnemyAttack()
    {
-      var vector = player.transform.position - asteroid.transform.position;
-      transform.Translate(vector * (speed * Time.deltaTime));
+      var vector = _playerView.transform.position - obj.transform.position;
+      transform.Translate(vector * _speed);
    }
    private void FixedUpdate()
    {
-      EnemyAttack(obj.transform ,_playerView.transform, _speed);
+      EnemyAttack();
    }
    
 }
