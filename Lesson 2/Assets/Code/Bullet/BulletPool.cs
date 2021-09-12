@@ -15,12 +15,15 @@ namespace Code.Bullet
         {
             _objectsPool = new List<GameObject>();
             Init();
+            ServiceLocator.AddObject(_objectsPool);
         }
 
         private void Update()
         {
+            
             if (Input.GetMouseButtonDown(0))
             {
+                ServiceLocator.GetObject<GameObject>();
                 CreateBullet();
             }
         }
