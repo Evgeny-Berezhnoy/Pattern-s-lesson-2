@@ -1,14 +1,12 @@
-﻿using  UnityEngine;
-    
+﻿ using UnityEngine;
+
 public class BulletData
+{
+    public float damage;
+    public Collider2D bullet;
+    public BulletData(float bulletDamage, Collider2D collider2D)
     {
-        internal Transform _barrel;
-        internal float _force;
-        internal Rigidbody2D _rigidbody2D;
-        public BulletData(Transform transform, float force, Rigidbody2D rigidbody2D)
-        {
-            _barrel = transform;
-            _force = force;
-            _rigidbody2D = rigidbody2D;
-        }
+        damage = bulletDamage;
+        bullet = collider2D;
     }
+}

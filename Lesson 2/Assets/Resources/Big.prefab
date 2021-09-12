@@ -12,14 +12,15 @@ GameObject:
   - component: {fileID: 659154523503064229}
   - component: {fileID: -939329628690929229}
   - component: {fileID: 431036369728367341}
-  - component: {fileID: -1950794861836541164}
+  - component: {fileID: 6248673652145279595}
+  - component: {fileID: -2461202851421199477}
   m_Layer: 0
   m_Name: Big
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8229184902162360783
 Transform:
   m_ObjectHideFlags: 0
@@ -96,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e711d80d091420e8c4ca702c81b83ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageEnemy: 0
+  _damageEnemy: 11
 --- !u!114 &431036369728367341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,8 +113,21 @@ MonoBehaviour:
   _damageEnemy: 25
   _speed: 0.001
   obj: {fileID: 1829189280640820382}
---- !u!70 &-1950794861836541164
-CapsuleCollider2D:
+--- !u!114 &6248673652145279595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829189280640820382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3e4cff28776420182785be771144ecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damageEnemy: 15
+--- !u!61 &-2461202851421199477
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -126,5 +140,15 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.85, y: 0.44}
-  m_Direction: 0
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.52, y: 0.44}
+    newSize: {x: 0.52, y: 0.44}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.52, y: 0.44}
+  m_EdgeRadius: 0

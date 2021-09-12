@@ -16,6 +16,7 @@ namespace Code.Bullet
             _objectsPool = new List<GameObject>();
             Init();
         }
+
         private void Update()
         {
             if (Input.GetMouseButtonDown(0))
@@ -23,6 +24,7 @@ namespace Code.Bullet
                 CreateBullet();
             }
         }
+
         public void Init()
         {
             for (int i = 0; i < size; i++)
@@ -39,7 +41,7 @@ namespace Code.Bullet
             foreach (var bullet in _objectsPool)
             {
                 if (!bullet.activeSelf)
-                {   
+                {
                     bullet.transform.position = AIM.transform.position;
                     bullet.transform.rotation = AIM.transform.rotation;
                     bullet.SetActive(true);
@@ -56,5 +58,4 @@ namespace Code.Bullet
             gO.SetActive(false);
         }
     }
-    
 }

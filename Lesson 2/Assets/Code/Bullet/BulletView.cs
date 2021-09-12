@@ -1,38 +1,49 @@
 ﻿using UnityEngine;
+
 public class BulletView : MonoBehaviour
+{
+    public float damageBullet;
+    public Collider2D bulletCollaider;
+    private BulletData bulletData;
+    private BulletController _bulletController;
+
+    private void Start()
     {
-        [SerializeField] private float _damageBulletl;
-        [SerializeField]private Transform _barrel;
-        [SerializeField]private float _force;
-        [SerializeField]private Rigidbody2D _rigidbody2D;
-        private BulletController _bulletController;
-        
-        private void Start()
+        _bulletController = new BulletController(damageBullet, bulletCollaider);
+    }
+
+    private void DamageAsteroid(Asteroid hp, float damageBulls)
+    {
+        hp.AsteroidsHealth.Current -= damageBulls;
+    }
+
+    private void DamageBigAsteroid(BigAsteroid hp, float damageBulls)
+    {
+        hp.BigAsteroid.Current -= damageBulls;
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.TryGetComponent(out Asteroid enemy))
         {
-            _bulletController = new BulletController(new BulletData(_barrel,_force,_rigidbody2D));
-        }
-        private void Update()
-        {
-            if (Input.GetButtonDown(NAME_MANAGER.LeftButtonMouse))
+            DamageAsteroid(enemy.GetComponent<Asteroid>(), damageBullet);
+            if (enemy.AsteroidsHealth.Current <= 0)
             {
-               //_bulletController.CreateBullet(_rigidbody2D, _barrel.transform, _force); // <--- переделать стрельбу/ получения урона
+                enemy.gameObject.SetActive(false);
             }
+
+            Debug.Log($"{enemy.AsteroidsHealth.Current}");
         }
-        private void OnCollisionEnter2D(Collision2D other)
+
+        else if (other.gameObject.TryGetComponent(out BigAsteroid Big))
         {
-            if (other.gameObject.GetComponent<Enemy>())
+            DamageBigAsteroid(Big.GetComponent<BigAsteroid>(), damageBullet);
+            if (Big.BigAsteroid.Current <= 0)
             {
-                if(other.gameObject.GetComponent<Enemy>().Health.Current<=0) Destroy(other.gameObject);
-                else
-                { 
-                    Damage(other.gameObject.GetComponent<Enemy>(), _damageBulletl);
-                    Debug.Log($"{other.gameObject.GetComponent<Enemy>().Health.Current}");
-                }
+                Big.gameObject.SetActive(false);
             }
-        }
-        
-        private void Damage(Enemy hp,float damageBulls)
-        {
-            hp.Health.Current -= damageBulls;
+
+            Debug.Log($"{Big.BigAsteroid.Current}");
         }
     }
+}

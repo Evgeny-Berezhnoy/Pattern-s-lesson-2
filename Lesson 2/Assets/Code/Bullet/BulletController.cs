@@ -2,18 +2,10 @@
 
 public class BulletController
 {
-    private Transform _barrel;
-    private float _force;
-    private Rigidbody2D _rigidbody2D;
-    public BulletController(BulletData bulletData)
+    private BulletData bulletData;
+    
+    public BulletController(float damage, Collider2D collider2D)
     {
-        _barrel = bulletData._barrel;
-        _force = bulletData._force;
-        _rigidbody2D = bulletData._rigidbody2D;
+        bulletData = new BulletData(damage, collider2D);
     }
-        public void CreateBullet(Rigidbody2D rigidbody2D, Transform transform, float force)
-        {
-            var bul = Object.Instantiate(rigidbody2D, transform.position, transform.rotation);
-            bul.velocity = transform.up * force;
-        }
-    }
+}
