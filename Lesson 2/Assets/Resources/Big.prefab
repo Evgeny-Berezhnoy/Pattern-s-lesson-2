@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e711d80d091420e8c4ca702c81b83ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageEnemy: 11
+  _damageEnemy: 0
 --- !u!114 &431036369728367341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd573f2e0c11439bbe02c899397cbedf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageEnemy: 25
+  _damageEnemy: 0
   _speed: 0.001
   obj: {fileID: 1829189280640820382}
 --- !u!114 &6248673652145279595
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e4cff28776420182785be771144ecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageEnemy: 15
+  _damageEnemy: 10
 --- !u!61 &-2461202851421199477
 BoxCollider2D:
   m_ObjectHideFlags: 0

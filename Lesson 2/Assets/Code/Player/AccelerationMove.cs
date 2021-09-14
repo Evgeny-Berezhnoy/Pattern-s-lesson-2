@@ -4,7 +4,7 @@ internal sealed class AccelerationMove : Player, IMove
 {
     private readonly float _acceleration;
 
-    public AccelerationMove(Transform transformPlayer, float speed, float hp, float acceleration) : base(
+    public AccelerationMove(Transform transformPlayer, float speed, Health hp, float acceleration) : base(
         transformPlayer, speed, hp)
     {
         _acceleration = acceleration;

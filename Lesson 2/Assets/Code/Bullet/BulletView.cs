@@ -19,7 +19,7 @@ public class BulletView : MonoBehaviour
 
     private void DamageBigAsteroid(BigAsteroid hp, float damageBulls)
     {
-        hp.BigAsteroid.Current -= damageBulls;
+        hp.BigAsteroids.Current -= damageBulls;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -38,12 +38,12 @@ public class BulletView : MonoBehaviour
         else if (other.gameObject.TryGetComponent(out BigAsteroid Big))
         {
             DamageBigAsteroid(Big.GetComponent<BigAsteroid>(), damageBullet);
-            if (Big.BigAsteroid.Current <= 0)
+            if (Big.BigAsteroids.Current <= 0)
             {
                 Big.gameObject.SetActive(false);
             }
 
-            Debug.Log($"{Big.BigAsteroid.Current}");
+            Debug.Log($"{Big.BigAsteroids.Current}");
         }
     }
 }

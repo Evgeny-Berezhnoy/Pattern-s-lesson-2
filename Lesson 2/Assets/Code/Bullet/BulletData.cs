@@ -2,8 +2,9 @@
 
 public class BulletData
 {
-    public float damage;
-    public Collider2D bullet;
+    private float damage;
+    private Collider2D bullet;
+
     public BulletData(float bulletDamage, Collider2D collider2D)
     {
         damage = bulletDamage;

@@ -38,7 +38,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd573f2e0c11439bbe02c899397cbedf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageEnemy: 10
+  _damageEnemy: 15
+  _playerView: {fileID: 653323128437384532, guid: fe0ce181b00843f489dcad0fb91b3eab,
+    type: 3}
   _speed: 0.001
   obj: {fileID: 4921020691428157852}
 --- !u!114 &-866140405399003801
@@ -53,7 +55,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d338309136ab40928fb0c6bccbe57bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageEnemy: 0
+  _damageEnemy: 15
+  _playerView: {fileID: 0}
 --- !u!114 &3974902015724738722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,7 +69,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e4cff28776420182785be771144ecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageEnemy: 11
+  _damageEnemy: 15
+  _playerView: {fileID: 653323128437384532, guid: fe0ce181b00843f489dcad0fb91b3eab,
+    type: 3}
 --- !u!1001 &1271285060324782989
 PrefabInstance:
   m_ObjectHideFlags: 0
